@@ -18,9 +18,61 @@
     justify-content: space-between;
 }
 
+.data {
+    margin: auto;
+    margin-top: 64px;
+    width: 60%;
+}
+
+.data thead {
+    background-color: cornflowerblue;
+}
+
+input[type = "number" i] {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 6px;
+    margin-left: 6px;
+    padding: 6px;
+    height: 24px;
+}
+
+input[type = "text" i] {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-left: 6px;
+    padding: 6px;
+    height: 24px;
+    width: 144px;
+}
+
+input[type = "submit" i] {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 6px;
+    margin-top: 6px;
+    padding: 6px 12px;
+}
+
+input[type = "submit" i]:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
 #input {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
+}
+
+#tbody a {
+    cursor: pointer;
 }
