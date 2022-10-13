@@ -1,19 +1,31 @@
 var selectedRow = null;
 var no = 1;
 
-function onFormSubmit() {
-  var formData = readFormData();
+function formSubmit() {
+  var formData = readForm();
   if (selectedRow == null) insertData(formData);
   else updateData(formData);
   resetForm();
 }
 
-function readFormData() {
+function readForm() {
   var formData = {};
   formData["nim"] = document.getElementById("nim").value;
   formData["name"] = document.getElementById("name").value;
   return formData;
 }
+
+function resetForm() {
+  document.getElementById("nim").value = "";
+  document.getElementById("name").value = "";
+  selectedRow = null;
+}
+
+function updateData(formData) {
+  selectedRow.cells[1].innerHTML = formData.nim;
+  selectedRow.cells[2].innerHTML = formData.name;
+}
+
 
 function insertData(data) {
   var table = document.getElementById("tabledata").getElementsByTagName("tbody")[0];
@@ -28,21 +40,10 @@ function insertData(data) {
   cell3.innerHTML = `<a onClick="onEdit(this)">Edit</a> | <a onClick="onDelete(this)">Delete</a>`;
 }
 
-function resetForm() {
-  document.getElementById("nim").value = "";
-  document.getElementById("name").value = "";
-  selectedRow = null;
-}
-
 function onEdit(td) {
   selectedRow = td.parentElement.parentElement;
   document.getElementById("nim").value = selectedRow.cells[1].innerHTML;
   document.getElementById("name").value = selectedRow.cells[2].innerHTML;
-}
-
-function updateData(formData) {
-  selectedRow.cells[1].innerHTML = formData.nim;
-  selectedRow.cells[2].innerHTML = formData.name;
 }
 
 function onDelete(td) {
