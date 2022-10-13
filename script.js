@@ -1,4 +1,5 @@
 var selectedRow = null;
+var no = 1;
 
 function onFormSubmit() {
   var formData = readFormData();
@@ -14,12 +15,8 @@ function readFormData() {
   return formData;
 }
 
-// to add number
-var no = 1;
-// to add number
-
 function insertData(data) {
-  var table = document.getElementById("datalist").getElementsByTagName("tbody")[0];
+  var table = document.getElementById("tabledata").getElementsByTagName("tbody")[0];
   var newRow = table.insertRow(table.length);
   cell0 = newRow.insertCell(0);
   cell0.innerHTML = no++;
@@ -51,7 +48,7 @@ function updateData(formData) {
 function onDelete(td) {
   if (confirm("Delete?")) {
     row = td.parentElement.parentElement;
-    document.getElementById("datalist").deleteRow(row.rowIndex);
+    document.getElementById("tabledata").deleteRow(row.rowIndex);
     resetForm();
   }
 }
