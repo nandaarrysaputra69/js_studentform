@@ -26,7 +26,6 @@ function updateData(formData) {
   selectedRow.cells[2].innerHTML = formData.name;
 }
 
-
 function insertData(data) {
   var table = document.getElementById("tabledata").getElementsByTagName("tbody")[0];
   var newRow = table.insertRow(table.length);
