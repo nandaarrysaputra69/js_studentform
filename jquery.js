@@ -14,7 +14,7 @@ $("form").submit(function(e){
         + "'><td>" + no
         + "</td><td>" + nim
         + "</td><td>" + name
-        + "</td><td><a class='btn-edit' type='button'>Edit | </a><a class='btn-delete' type='button'>Delete</a></td></tr>"
+        + "</td><td><a class='btn-edit' type='button' style='text-decoration : none;'>Edit | </a><a class='btn-delete' type='button' style='text-decoration : none;'>Delete</a></td></tr>"
     );
 
     $("input[name='']").val("");
